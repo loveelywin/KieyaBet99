@@ -1,1 +1,458 @@
-NT
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>🎰 KieyaBet99 💰</title>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, 'Segoe UI', 'Inter', 'Poppins', -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+        }
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #2e0b0b 0%, #4e1b1b 50%, #2e0b0b 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+        }
+        .offer-card {
+            background: rgba(45, 15, 15, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-radius: 2.5rem;
+            border: 1px solid rgba(255, 180, 130, 0.5);
+            padding: 2.2rem 2rem;
+            max-width: 1400px;
+            width: 100%;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 170, 120, 0.3) inset, 0 0 40px rgba(226, 138, 43, 0.3);
+        }
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            background: linear-gradient(135deg, #ffb07d, #ff9d6b, #ffd166);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: -0.5px;
+            margin-bottom: 0.3rem;
+        }
+        h1 i { background: none; font-size: 2.2rem; color: #ffd4aa; filter: drop-shadow(0 0 8px #ffb07d); -webkit-text-fill-color: #ffd4aa; }
+        .sub-head {
+            font-size: 1.15rem;
+            font-weight: 500;
+            color: #ffd4b8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            border-bottom: 1px dashed rgba(255, 180, 130, 0.5);
+            padding-bottom: 1rem;
+            margin-bottom: 1rem;
+        }
+        .popup-settings-wrapper { text-align: center; margin-bottom: 1rem; }
+        .popup-settings-btn {
+            background: linear-gradient(135deg, #ff9800, #f44336);
+            border: none;
+            border-radius: 40px;
+            padding: 12px 28px;
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 0 20px rgba(255, 152, 0, 0.5);
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .popup-settings-btn:hover { transform: scale(1.05); box-shadow: 0 0 35px rgba(255, 152, 0, 0.8); }
+        .popup-note { display: block; color: #ffcc80; font-size: 0.8rem; margin-top: 6px; }
+        .settings-panel {
+            background: rgba(70, 20, 20, 0.5);
+            border-radius: 20px;
+            padding: 15px 20px;
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            border: 1px solid #ffb47a44;
+        }
+        .settings-panel label { color: #ffd4aa; font-weight: 600; font-size: 0.95rem; white-space: nowrap; }
+        .settings-panel input {
+            width: 70px;
+            padding: 8px 12px;
+            border-radius: 30px;
+            border: 2px solid #ffb07d;
+            background: #2e0b0b;
+            color: #ffd166;
+            font-weight: 700;
+            font-size: 1rem;
+            text-align: center;
+            outline: none;
+        }
+        .settings-panel input:focus { border-color: #ffd166; box-shadow: 0 0 12px #ffd16655; }
+        .save-btn {
+            background: linear-gradient(135deg, #d6a006, #52400d);
+            border: none;
+            border-radius: 30px;
+            padding: 8px 18px;
+            color: #fff;
+            font-weight: 700;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+        .save-btn:hover { transform: scale(1.05); box-shadow: 0 0 15px #d6a006; }
+        .auto-click-wrapper { text-align: center; margin-bottom: 1.5rem; }
+        .auto-click-btn {
+            background: linear-gradient(135deg, #ff9d6b, #ffb07d);
+            border: none;
+            border-radius: 60px;
+            padding: 1rem 2.5rem;
+            color: #2e0b0b;
+            font-size: 1.2rem;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 0 30px rgba(255, 157, 107, 0.6);
+            transition: all 0.3s ease;
+            letter-spacing: 1px;
+        }
+        .auto-click-btn:hover { transform: scale(1.05); box-shadow: 0 0 50px rgba(255, 157, 107, 0.9); }
+        .auto-click-btn:disabled { background: #555; cursor: not-allowed; box-shadow: none; opacity: 0.6; color: #ccc; }
+        .auto-status { display: block; margin-top: 10px; color: #ffd166; font-weight: 600; font-size: 0.95rem; min-height: 22px; }
+        .click-dashboard {
+            background: rgba(70, 20, 20, 0.6);
+            border-radius: 60px;
+            padding: 0.8rem 2rem;
+            margin-bottom: 2.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 15px 25px;
+            border: 1px solid #ffb47a66;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3), 0 0 20px rgba(255, 180, 122, 0.2);
+        }
+        .total-clicks { display: flex; align-items: center; gap: 12px; font-weight: 700; font-size: 1.3rem; color: #ffe2e2; }
+        .total-clicks i { font-size: 2rem; color: #ffd4b3; filter: drop-shadow(0 0 6px #ff9d6b); }
+        .click-badge {
+            background: #2e0b0bcc;
+            backdrop-filter: blur(4px);
+            padding: 8px 28px;
+            border-radius: 50px;
+            border: 1px solid #ffd166;
+            box-shadow: 0 0 15px #ffd16633;
+        }
+        .click-badge span { font-weight: 800; font-size: 2.2rem; color: #ffd166; margin-left: 10px; letter-spacing: 1px; }
+        .legend { display: flex; gap: 20px; font-size: 0.9rem; font-weight: 500; }
+        .legend-item { display: flex; align-items: center; gap: 8px; }
+        .legend-dot { width: 16px; height: 16px; border-radius: 20px; background: #dd7a4e; box-shadow: 0 0 8px #ffb07d; }
+        .legend-dot.used { background: #d6a006; box-shadow: 0 0 12px #d6a006; }
+        .btn-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 12px; margin-bottom: 1.5rem; }
+        .offer-btn {
+            background: linear-gradient(135deg, #6b1e1e, #481515);
+            border: none;
+            border-radius: 60px;
+            padding: 0.85rem 0.6rem;
+            color: #ffeded;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            cursor: pointer;
+            transition: all 0.25s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4), 0 0 0 1.5px #bf5a2c inset;
+            width: 100%;
+            text-decoration: none;
+            position: relative;
+            border: 1px solid #dd7a4e55;
+        }
+        .offer-btn i { font-size: 1.2rem; color: #ffd4b3; }
+        .click-counter {
+            background: #2e0b0b;
+            border-radius: 40px;
+            padding: 2px 10px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            color: #ffd166;
+            border: 1px solid #ffb347;
+            margin-left: 4px;
+        }
+        .offer-btn.clicked { background: linear-gradient(135deg, #52400d, #3b2e07); border: 1.5px solid #d6a006; box-shadow: 0 0 18px #d6a006, 0 0 0 1.5px #ffd166 inset; }
+        .offer-btn.clicked i { color: #ffea9f; }
+        .offer-btn.clicked .click-counter { background: #33280a; color: #ffeaa6; border-color: #ffd966; }
+        .offer-btn:hover { transform: translateY(-4px) scale(1.03); background: linear-gradient(135deg, #a02c2c, #6b1e1e); box-shadow: 0 18px 28px -8px black, 0 0 0 2.5px #ffd4aa inset; }
+        .section-label { font-size: 1.15rem; margin: 18px 0 8px; color: #ffd4aa; display: flex; align-items: center; gap: 10px; font-weight: 600; }
+        .section-label i { color: #ffd4b3; }
+        .card-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            color: #ffd4b2;
+            border-top: 1px solid #ffb47a66;
+            padding-top: 1.4rem;
+            font-size: 0.9rem;
+        }
+        .reset-link {
+            background: none;
+            border: 1.5px solid #ffd4aa;
+            padding: 8px 22px;
+            border-radius: 50px;
+            color: #ffe0d6;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.95rem;
+        }
+        .reset-link:hover { background: #ffb47a30; border-color: #ffd166; color: #ffeaaf; }
+        @media (max-width: 700px) {
+            .offer-card { padding: 1.5rem 1.2rem; }
+            h1 { font-size: 2rem; }
+            .click-dashboard { flex-direction: column; align-items: stretch; border-radius: 40px; padding: 1.2rem; }
+            .btn-grid { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
+            .offer-btn { padding: 0.7rem 0.5rem; font-size: 0.8rem; }
+            .auto-click-btn { font-size: 1rem; padding: 0.8rem 1.8rem; }
+            .settings-panel { flex-direction: column; gap: 10px; }
+            .popup-settings-btn { font-size: 0.9rem; padding: 10px 20px; }
+        }
+    </style>
+</head>
+<body>
+<div class="offer-card">
+    <h1><i class="fas fa-dice"></i> KieyaBet99 <i class="fas fa-coins"></i></h1>
+    <div class="sub-head"><i class="fas fa-ticket-alt"></i> 57 BETTING OFFERS · ALL ACTIVE <i class="fas fa-trophy"></i></div>
+
+    <!-- POPUP SETTINGS BUTTON -->
+    <div class="popup-settings-wrapper">
+        <button class="popup-settings-btn" onclick="openPopupSettings()"><i class="fas fa-cog"></i> ⚠️ ALLOW POPUPS FIRST (OPEN SETTINGS)</button>
+        <span class="popup-note">Click → Copy URL → Open new tab → Paste → Allow → Then START</span>
+    </div>
+
+    <!-- SETTINGS PANEL -->
+    <div class="settings-panel">
+        <label for="roundInput">🔄 ROUNDS:</label>
+        <input type="number" id="roundInput" value="3" min="1" max="100" onchange="saveRoundSetting()">
+        <button class="save-btn" onclick="saveRoundSetting()">💾 SAVE</button>
+        <span style="color:#06d6a0;font-size:0.85rem;" id="saveConfirm"></span>
+    </div>
+
+    <!-- AUTO CLICK BUTTON -->
+    <div class="auto-click-wrapper">
+        <button class="auto-click-btn" id="autoClickBtn" onclick="startAutoClick()">🚀 START AUTO CLICK</button>
+        <div class="auto-status" id="autoStatus">Ready · <span id="roundDisplay">3</span> round(s)</div>
+    </div>
+
+    <!-- Dashboard -->
+    <div class="click-dashboard">
+        <div class="total-clicks"><i class="fas fa-chart-pie"></i><span>🎰 TOTAL CLAIMS</span></div>
+        <div class="click-badge"><i class="fas fa-fingerprint"></i> <span id="globalCounter">0</span></div>
+        <div class="legend"><div class="legend-item"><span class="legend-dot"></span> available</div><div class="legend-item"><span class="legend-dot used"></span> claimed</div></div>
+    </div>
+
+    <!-- ALL 57 OFFERS (LINKS REPLACED) -->
+    <div class="section-label"><i class="fas fa-star"></i> 🎲 JACKPOT DEALS & WINNINGS 💵 <i class="fas fa-star"></i></div>
+    <div class="btn-grid" id="offerGrid">
+        <!-- 1 -->
+        <a href="https://laceratereceiptworkman.com/e9sre9kfj?key=d7fedbe81aaf1b7efb5d48c431e5a91e" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_1" bn="1"><i class="fas fa-dice"></i> LUCKY DICE <span class="click-counter" id="count_1">0</span></a>
+        <!-- 2 -->
+        <a href="https://laceratereceiptworkman.com/t3mv5hcfv?key=4b41f0f60e5adf9d9d3a1e2ad1a9252f" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_2" bn="2"><i class="fas fa-coins"></i> GOLD COINS <span class="click-counter" id="count_2">0</span></a>
+        <!-- 3 -->
+        <a href="https://laceratereceiptworkman.com/azqbk0sn?key=f6ef8bc7ce085e754d72e70aeb775419" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_3" bn="3"><i class="fas fa-trophy"></i> BIG WINNER <span class="click-counter" id="count_3">0</span></a>
+        <!-- 4 -->
+        <a href="https://laceratereceiptworkman.com/r2pdvqsg7m?key=03ed7a04cfe40c03db117ff84e639aa2" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_4" bn="4"><i class="fas fa-gem"></i> JACKPOT GEM <span class="click-counter" id="count_4">0</span></a>
+        <!-- 5 -->
+        <a href="https://laceratereceiptworkman.com/idyxdghk?key=ee88ea22de61c2c92dbfcb99a8925906" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_5" bn="5"><i class="fas fa-crown"></i> ROYAL BET <span class="click-counter" id="count_5">0</span></a>
+        <!-- 6 -->
+        <a href="https://laceratereceiptworkman.com/d151hz9g?key=a2f773f76f0207ec8190d508604361d1" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_6" bn="6"><i class="fas fa-star"></i> STAR PRIZE <span class="click-counter" id="count_6">0</span></a>
+        <!-- 7 -->
+        <a href="https://laceratereceiptworkman.com/tgp06rnbqc?key=ce4efd69f6b6fc94c57d94040cfa949e" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_7" bn="7"><i class="fas fa-fire"></i> HOT STREAK <span class="click-counter" id="count_7">0</span></a>
+        <!-- 8 -->
+        <a href="https://laceratereceiptworkman.com/z0swb88q0?key=f3ee0db7d853d9b9a1932b0535524e93" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_8" bn="8"><i class="fas fa-bolt"></i> LIGHTNING WIN <span class="click-counter" id="count_8">0</span></a>
+        <!-- 9 -->
+        <a href="https://laceratereceiptworkman.com/tmk3h9h4x?key=5f9cb1154fa29a52777202d9fe6c63f2" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_9" bn="9"><i class="fas fa-diamond"></i> DIAMOND BET <span class="click-counter" id="count_9">0</span></a>
+        <!-- 10 -->
+        <a href="https://laceratereceiptworkman.com/rcw1x2ub?key=b58d9bde211e3cb707ce161682243540" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_10" bn="10"><i class="fas fa-heart"></i> LUCKY HEART <span class="click-counter" id="count_10">0</span></a>
+        <!-- 11 -->
+        <a href="https://laceratereceiptworkman.com/jbuw3g77?key=a43c5d7548ca335ef84deeafa1aec38b" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_11" bn="11"><i class="fas fa-clover"></i> FOUR LEAF <span class="click-counter" id="count_11">0</span></a>
+        <!-- 12 -->
+        <a href="https://laceratereceiptworkman.com/irp3a9ai?key=b555fb756d66fdf1a8f4eb8d99f49902" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_12" bn="12"><i class="fas fa-horseshoe"></i> HORSESHOE <span class="click-counter" id="count_12">0</span></a>
+        <!-- 13 -->
+        <a href="https://laceratereceiptworkman.com/dmdb9z209k?key=a83f830cfcf25dace59f4c38932b57cb" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_13" bn="13"><i class="fas fa-ticket-alt"></i> GOLDEN TICKET <span class="click-counter" id="count_13">0</span></a>
+        <!-- 14 -->
+        <a href="https://laceratereceiptworkman.com/rgwa8td5?key=e9f35bad6b06e717a1b4eac80e3a7fe1" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_14" bn="14"><i class="fas fa-money-bill-wave"></i> CASH OUT <span class="click-counter" id="count_14">0</span></a>
+        <!-- 15 -->
+        <a href="https://laceratereceiptworkman.com/pwv1y11t2?key=709115da7df39da2e43759c528ac074d" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_15" bn="15"><i class="fas fa-piggy-bank"></i> PIGGY BANK <span class="click-counter" id="count_15">0</span></a>
+        <!-- 16 -->
+        <a href="https://laceratereceiptworkman.com/r3pwp965?key=6271c073362f27372ca23ecea4d063c8" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_16" bn="16"><i class="fas fa-dollar-sign"></i> DOLLAR DEAL <span class="click-counter" id="count_16">0</span></a>
+        <!-- 17 -->
+        <a href="https://laceratereceiptworkman.com/h0vhjk6e43?key=6fb7db498b6b9b60f948d9072a9b1dbd" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_17" bn="17"><i class="fas fa-euro-sign"></i> EURO BET <span class="click-counter" id="count_17">0</span></a>
+        <!-- 18 -->
+        <a href="https://laceratereceiptworkman.com/ey207wrjd?key=3be6bf446fbf566207646d9eaf1c1639" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_18" bn="18"><i class="fas fa-pound-sign"></i> POUND PRIZE <span class="click-counter" id="count_18">0</span></a>
+        <!-- 19 -->
+        <a href="https://laceratereceiptworkman.com/qwr843n70p?key=3c8c1bfa218f6d316ed41adc2e9f305b" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_19" bn="19"><i class="fas fa-yen-sign"></i> YEN WINNER <span class="click-counter" id="count_19">0</span></a>
+        <!-- 20 -->
+        <a href="https://laceratereceiptworkman.com/v0vu131skr?key=68f359f60f5dfbe2a84c9f4e202486e2" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_20" bn="20"><i class="fas fa-rupee-sign"></i> RUPEE RUSH <span class="click-counter" id="count_20">0</span></a>
+        <!-- 21 -->
+        <a href="https://laceratereceiptworkman.com/xe40hmjhes?key=e01f7ba6c63e9192ce9d9231110eb09a" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_21" bn="21"><i class="fas fa-dice-d6"></i> CUBE WIN <span class="click-counter" id="count_21">0</span></a>
+        <!-- 22 -->
+        <a href="https://laceratereceiptworkman.com/vzgkhb6q?key=8f1b75a8d36e0c6ac1920461bfb40a2c" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_22" bn="22"><i class="fas fa-dice-d20"></i> D20 CRIT <span class="click-counter" id="count_22">0</span></a>
+        <!-- 23 -->
+        <a href="https://laceratereceiptworkman.com/pkr5i77uv1?key=715559f378e100d80da50ce45553d05b" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_23" bn="23"><i class="fas fa-chess-king"></i> KING BET <span class="click-counter" id="count_23">0</span></a>
+        <!-- 24 -->
+        <a href="https://laceratereceiptworkman.com/gq4g8z3f?key=4ee5cc4062357889b3c33c20dc030806" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_24" bn="24"><i class="fas fa-chess-queen"></i> QUEEN WIN <span class="click-counter" id="count_24">0</span></a>
+        <!-- 25 -->
+        <a href="https://laceratereceiptworkman.com/zj95g3hd?key=b14400662981ffacb90a212caf97d948" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_25" bn="25"><i class="fas fa-chess-rook"></i> ROOK RUSH <span class="click-counter" id="count_25">0</span></a>
+        <!-- 26 -->
+        <a href="https://laceratereceiptworkman.com/pxx9860udy?key=429778e906c44075ae7e567a9156b80e" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_26" bn="26"><i class="fas fa-chess-bishop"></i> BISHOP BET <span class="click-counter" id="count_26">0</span></a>
+        <!-- 27 -->
+        <a href="https://laceratereceiptworkman.com/eyebgsrw6a?key=a12cd923e5a48ec087bac05c8f846c4f" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_27" bn="27"><i class="fas fa-chess-knight"></i> KNIGHT WIN <span class="click-counter" id="count_27">0</span></a>
+        <!-- 28 -->
+        <a href="https://laceratereceiptworkman.com/vtbahti34g?key=6f099fb5d8359dbfd4b1aa3fa443d10e" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_28" bn="28"><i class="fas fa-chess-pawn"></i> PAWN PRIZE <span class="click-counter" id="count_28">0</span></a>
+        <!-- 29 -->
+        <a href="https://laceratereceiptworkman.com/k3caxwux?key=291d2c9de650d9b1997c943df81d6369" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_29" bn="29"><i class="fas fa-chess"></i> CHECKMATE <span class="click-counter" id="count_29">0</span></a>
+        <!-- 30 -->
+        <a href="https://laceratereceiptworkman.com/kbxz67ynr?key=158c21d014a4814c33b4d097653797e6" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_30" bn="30"><i class="fas fa-dice-five"></i> YAHTZEE <span class="click-counter" id="count_30">0</span></a>
+        <!-- 31 -->
+        <a href="https://laceratereceiptworkman.com/c31p4k4b?key=e929f50ccd1776fe0dcf381231f2b04e" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_31" bn="31"><i class="fas fa-dice-six"></i> SIXES WIN <span class="click-counter" id="count_31">0</span></a>
+        <!-- 32 -->
+        <a href="https://laceratereceiptworkman.com/mia68zpp?key=2b2a1c0b72f04a0d161a3e0aa72def2f" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_32" bn="32"><i class="fas fa-dice-one"></i> SNAKE EYES <span class="click-counter" id="count_32">0</span></a>
+        <!-- 33 -->
+        <a href="https://laceratereceiptworkman.com/gwyweitfqm?key=13107d0e4538cb3954c7554d62604124" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_33" bn="33"><i class="fas fa-dice-two"></i> DOUBLE DEAL <span class="click-counter" id="count_33">0</span></a>
+        <!-- 34 -->
+        <a href="https://laceratereceiptworkman.com/nv0aye8p?key=505e4b1be34e96e0c1d410bc60f35096" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_34" bn="34"><i class="fas fa-dice-three"></i> TRIPLE WIN <span class="click-counter" id="count_34">0</span></a>
+        <!-- 35 -->
+        <a href="https://laceratereceiptworkman.com/c5thvnqeix?key=5373e7e1b3495e861935f294d5bc24c4" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_35" bn="35"><i class="fas fa-dice-four"></i> FOURTUNE <span class="click-counter" id="count_35">0</span></a>
+        <!-- 36 -->
+        <a href="https://laceratereceiptworkman.com/wiqk97778?key=8535647573ca3bf5aaf78ba95ee4e251" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_36" bn="36"><i class="fas fa-dice-d6"></i> ROLLER <span class="click-counter" id="count_36">0</span></a>
+        <!-- 37 -->
+        <a href="https://laceratereceiptworkman.com/z53n4r9waq?key=da598a3248a95d178900e120ae78a53d" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_37" bn="37"><i class="fas fa-dice-d20"></i> CRITICAL WIN <span class="click-counter" id="count_37">0</span></a>
+        <!-- 38 -->
+        <a href="https://laceratereceiptworkman.com/fc6zeb2t?key=bd08d0c1bb5ed8e5039b73448a3f04ec" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_38" bn="38"><i class="fas fa-gamepad"></i> GAMER BET <span class="click-counter" id="count_38">0</span></a>
+        <!-- 39 -->
+        <a href="https://laceratereceiptworkman.com/u3xyc7mhsu?key=68c432a43d24bde3e18e76e52eef79f2" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_39" bn="39"><i class="fas fa-vr-cardboard"></i> VR CASINO <span class="click-counter" id="count_39">0</span></a>
+        <!-- 40 -->
+        <a href="https://laceratereceiptworkman.com/v56uh3jaw6?key=7bb2769a42444b9932901c5dffe9ed2a" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_40" bn="40"><i class="fas fa-headset"></i> LIVE DEALER <span class="click-counter" id="count_40">0</span></a>
+        <!-- 41 -->
+        <a href="https://laceratereceiptworkman.com/gh6n10cn?key=6642393ecfca4ab0ceb4a0946cafcd1a" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_41" bn="41"><i class="fas fa-chart-line"></i> RISER BET <span class="click-counter" id="count_41">0</span></a>
+        <!-- 42 -->
+        <a href="https://laceratereceiptworkman.com/d1bb51wn8?key=2dc0005d010fa95a8699f194f7301a32" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_42" bn="42"><i class="fas fa-chart-bar"></i> STATS WIN <span class="click-counter" id="count_42">0</span></a>
+        <!-- 43 -->
+        <a href="https://laceratereceiptworkman.com/r4d6qm2rv8?key=b4f09f5f7676771f44353bdbcdd9296d" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_43" bn="43"><i class="fas fa-chart-pie"></i> PIE PRIZE <span class="click-counter" id="count_43">0</span></a>
+        <!-- 44 -->
+        <a href="https://laceratereceiptworkman.com/zz7qyd9qty?key=b75be32dd1f8e4bbd1aba4a5bf0bed1f" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_44" bn="44"><i class="fas fa-percent"></i> ODD BOOST <span class="click-counter" id="count_44">0</span></a>
+        <!-- 45 -->
+        <a href="https://laceratereceiptworkman.com/qrx2sz7cv?key=3d3d76afcb823e87883ffc489235301f" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_45" bn="45"><i class="fas fa-calculator"></i> CALCULATED <span class="click-counter" id="count_45">0</span></a>
+        <!-- 46 -->
+        <a href="https://laceratereceiptworkman.com/v9934rufq?key=df5472abe79ae85036005e4c18b78a0f" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_46" bn="46"><i class="fas fa-clock"></i> TIME BET <span class="click-counter" id="count_46">0</span></a>
+        <!-- 47 -->
+        <a href="https://laceratereceiptworkman.com/tz4u4e4tbi?key=b9b9339aa48bda95e11410020806010f" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_47" bn="47"><i class="fas fa-hourglass-half"></i> HALF TIME <span class="click-counter" id="count_47">0</span></a>
+        <!-- 48 -->
+        <a href="https://laceratereceiptworkman.com/ertn583eqz?key=df348519c56db7ffd2cc3fddba3f7e15" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_48" bn="48"><i class="fas fa-hourglass-end"></i> FINAL WHISTLE <span class="click-counter" id="count_48">0</span></a>
+        <!-- 49 -->
+        <a href="https://laceratereceiptworkman.com/vw0fyrvsv?key=efde144f029549d21000ae5190210f62" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_49" bn="49"><i class="fas fa-flag-checkered"></i> FINISH LINE <span class="click-counter" id="count_49">0</span></a>
+        <!-- 50 -->
+        <a href="https://laceratereceiptworkman.com/imnv2jwfn?key=3514d67e822c532d1033f6a884c89eb8" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_50" bn="50"><i class="fas fa-medal"></i> MEDAL WIN <span class="click-counter" id="count_50">0</span></a>
+        <!-- 51 -->
+        <a href="https://laceratereceiptworkman.com/jmck2gppq?key=f39ba2eda5cdeb581537e49f5fce790b" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_51" bn="51"><i class="fas fa-award"></i> AWARD BET <span class="click-counter" id="count_51">0</span></a>
+        <!-- 52 -->
+        <a href="https://laceratereceiptworkman.com/pv57f87nf?key=42ec770fb9bcf4382ceab582341ecb51" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_52" bn="52"><i class="fas fa-certificate"></i> CERTIFIED WIN <span class="click-counter" id="count_52">0</span></a>
+        <!-- 53 -->
+        <a href="https://laceratereceiptworkman.com/zq0tmaa1da?key=b2c097208f74272b5a6254c43f6c3a41" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_53" bn="53"><i class="fas fa-star-half-alt"></i> HALF STAR <span class="click-counter" id="count_53">0</span></a>
+        <!-- 54 -->
+        <a href="https://laceratereceiptworkman.com/rkacgzsnp?key=eff9bbdc7c646a7c60da062ba67bdba4" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_54" bn="54"><i class="fas fa-tags"></i> TAG WIN <span class="click-counter" id="count_54">0</span></a>
+        <!-- 55 -->
+        <a href="https://laceratereceiptworkman.com/sa8nmqex?key=f5765fd97aa00503b452136e048001c5" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_55" bn="55"><i class="fas fa-tag"></i> FINAL TAG <span class="click-counter" id="count_55">0</span></a>
+        <!-- 56 -->
+        <a href="https://laceratereceiptworkman.com/fpbna8f8w?key=53e0e267242353037c9b92306c565aac" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_56" bn="56"><i class="fas fa-gift"></i> BONUS ROUND <span class="click-counter" id="count_56">0</span></a>
+        <!-- 57 -->
+        <a href="https://laceratereceiptworkman.com/gjih4pv8q?key=2f9a0ba0e7ce87227d85774ba7dfe8ce" target="_blank" rel="noopener noreferrer" class="offer-btn" id="btn_57" bn="57"><i class="fas fa-crown"></i> ULTIMATE WIN <span class="click-counter" id="count_57">0</span></a>
+    </div>
+
+    <div class="card-footer">
+        <span><i class="far fa-clock"></i> 57 active betting deals · instant access</span>
+        <div class="reset-link" onclick="resetAllCounters()"><i class="fas fa-arrows-rotate"></i> reset counters</div>
+    </div>
+</div>
+
+<script>
+    const btnsTotal = 57;
+    let cMap = {};
+    for (let i=1; i<=btnsTotal; i++) cMap['btn_'+i] = 0;
+    const STORE = 'bet_57_v1', RKEY = 'auto_rounds_bet_v1';
+
+    function lCounts() { try { let s=localStorage.getItem(STORE); if(s) { let p=JSON.parse(s); for(let k in cMap) if(typeof p[k]==='number') cMap[k]=p[k]; } } catch(e){} }
+    function sCounts() { try { localStorage.setItem(STORE, JSON.stringify(cMap)); } catch(e){} }
+    function total() { return Object.values(cMap).reduce((a,b)=>a+b,0); }
+
+    function refresh() {
+        document.getElementById('globalCounter').innerText = total();
+        for (let i=1; i<=btnsTotal; i++) {
+            let cs = document.getElementById('count_'+i), b = document.getElementById('btn_'+i);
+            if (cs && b) { let v = cMap['btn_'+i]||0; cs.innerText = v; v>0 ? b.classList.add('clicked') : b.classList.remove('clicked'); }
+        }
+    }
+
+    function inc(id) { if(cMap.hasOwnProperty(id)) { cMap[id]++; refresh(); sCounts(); } }
+
+    function resetAllCounters() { for (let i=1; i<=btnsTotal; i++) cMap['btn_'+i] = 0; refresh(); sCounts(); }
+
+    function openPopupSettings() {
+        let a = window.open('about:blank', '_blank');
+        if(a){a.document.write(`<html><head><title>Allow Popups</title><style>body{font-family:sans-serif;background:#2e0b0b;color:#fff;text-align:center;padding:40px;line-height:1.8;}.steps{background:#4e1b1b;padding:25px;border-radius:15px;display:inline-block;text-align:left;margin:20px;}.highlight{color:#ffd166;font-weight:bold;}code{background:#000;padding:4px 10px;border-radius:6px;color:#ffd166;font-size:16px;}button{background:#ff9d6b;color:#2e0b0b;border:none;padding:12px 30px;border-radius:30px;font-size:16px;cursor:pointer;margin-top:15px;font-weight:bold;}</style></head><body><h1>🔓 Allow Popups</h1><div class="steps"><p>📋 <span class="highlight">Step 1:</span> Copy URL:</p><p><code>chrome://settings/content/popups</code></p><p>📌 <span class="highlight">Step 2:</span> Open new tab (Ctrl+T)</p><p>📎 <span class="highlight">Step 3:</span> Paste & Enter</p><p>🔍 <span class="highlight">Step 4:</span> Allow this site</p><p>🔄 <span class="highlight">Step 5:</span> Come back & START</p></div><button onclick="navigator.clipboard.writeText('chrome://settings/content/popups').then(function(){}).catch(function(){})">📋 COPY SETTINGS URL</button></body></html>`);a.document.close();}
+    }
+
+    function gRounds() { try { let s=localStorage.getItem(RKEY); return s ? parseInt(s) : 3; } catch(e){ return 3; } }
+    function saveRoundSetting() {
+        let inp = document.getElementById('roundInput'), cf = document.getElementById('saveConfirm');
+        let v = parseInt(inp.value); if(isNaN(v)||v<1) v=1; if(v>100) v=100;
+        inp.value = v; localStorage.setItem(RKEY, v);
+        document.getElementById('roundDisplay').innerText = v;
+        cf.innerText = '✅ Saved: '+v+' round(s)'; setTimeout(()=>cf.innerText='',2000);
+    }
+    function loadRounds() { let r = gRounds(); document.getElementById('roundInput').value = r; document.getElementById('roundDisplay').innerText = r; }
+
+    let running = false;
+    function startAutoClick() {
+        if(running){alert('⚠️ Already running!');return;}
+        let btns = document.querySelectorAll('.offer-btn');
+        if(!btns.length){alert('❌ No buttons!');return;}
+        let rds = gRounds(), all = btns.length * rds;
+        let st = document.getElementById('autoStatus'), sBtn = document.getElementById('autoClickBtn');
+        running = true; sBtn.disabled = true; sBtn.textContent = '⏳ CLICKING...';
+        let cur = 0, round = 1, idx = 0;
+        st.textContent = '🔄 Round 1/'+rds+' · 0/'+all;
+        let t = setInterval(() => {
+            if(round>rds){clearInterval(t);st.textContent='✅ DONE! '+all+' clicks ('+btns.length+'×'+rds+')';sBtn.disabled=false;sBtn.textContent='🚀 START AUTO CLICK';running=false;return;}
+            if(idx>=btns.length){round++;idx=0;if(round>rds)return;st.textContent='🔄 Round '+round+'/'+rds+' · '+cur+'/'+all;return;}
+            let b=btns[idx],bid=b.id,url=b.href||b.getAttribute('href');
+            if(url){let a=document.createElement('a');a.href=url;a.target='_blank';a.rel='noopener noreferrer';document.body.appendChild(a);a.click();document.body.removeChild(a);cur++;if(bid&&cMap.hasOwnProperty(bid))inc(bid);st.textContent='🔄 R'+round+'/'+rds+' · #'+cur+'/'+all+' ✅';}
+            else{cur++;st.textContent='🔄 R'+round+'/'+rds+' · #'+cur+'/'+all+' ⚠️';}
+            idx++;
+        },2000);
+    }
+
+    for(let i=1;i<=btnsTotal;i++){let b=document.getElementById('btn_'+i);if(b)b.addEventListener('click',()=>inc('btn_'+i));}
+    lCounts();loadRounds();refresh();
+    console.log('✅ 57 betting btns | Rounds: '+gRounds());
+</script>
+</body>
+</html>
